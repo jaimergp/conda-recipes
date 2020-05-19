@@ -1,0 +1,38 @@
+package:
+  name: m2-tcsh
+  version: 6.19.00
+source:
+  url: https://mirrors.kernel.org/sourceware/cygwin/x86_64/release/tcsh/tcsh-6.22.01-1-src.tar.xz
+  md5: 7a556fb72ee27abf29429579b9720a85
+build:
+  number: 1
+requirements:
+  run:
+  - msys2-conda-epoch >=20160418
+  - m2-gcc-libs
+  - m2-libcatgets
+  - m2-libcrypt
+  - m2-libiconv
+  - m2-ncurses
+about:
+  home: https://www.tcsh.org/
+  license: BSD-3-Clause
+  summary: C shell with file name completion and command line editing
+extra:
+  msys2-binaries:
+    win-32:
+      srcpkg: msys/tcsh
+      url: http://repo.msys2.org/msys/i686/tcsh-6.19.00-1-i686.pkg.tar.xz
+      md5: 88e885549a78133f752db18e7a7d17f3
+      mv-srcs:
+      - '*'
+      mv-dsts:
+      - Library/
+    win-64:
+      srcpkg: msys/tcsh
+      url: http://repo.msys2.org/msys/x86_64/tcsh-6.19.00-1-x86_64.pkg.tar.xz
+      md5: 772c9cbe877e7580c08a8cdaf751bcb2
+      mv-srcs:
+      - '*'
+      mv-dsts:
+      - Library/
